@@ -1,0 +1,30 @@
+<!Doctype html>
+<html>
+<!-- 引用css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.9/sweetalert2.min.css">
+
+<div class="container">
+ <!-- 要觸發的a或button加上class="js-trigger-alert" -->
+ <button class="js-trigger-alert">我是一顆會告訴你你這輩子命運的按鈕</button>
+</div>
+
+<!-- 引用js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.9/sweetalert2.min.js"></script>
+<script>
+ var openAlert = function() {
+  swal({
+   title: "! 我的天ㄚ !", // 標題
+   html: "<p>您真的是太天才了</p><p>怎麼會因為我是一個按鈕</p>
+          <p>所以就把我打開呢 ?</p>
+          <p>您不知道這樣我需要更辛苦的工作才可以顯示出這些文字嗎 ?</p>", // 內文，可以放html
+   type: "error", // icon的圖片，有以下幾種：error, warning, success, info, question
+   confirmButtonText: "沒錯，我就是天才" // 關閉按鈕顯示的文字
+  });
+ };
+ var triggerBtn = document.querySelector(".js-trigger-alert");
+ triggerBtn.addEventListener("click", function(e) {
+  e.preventDefault();
+  openAlert();
+ });
+</script>
+</html>
